@@ -1,0 +1,25 @@
+<h1>Shopping Cart</h1>
+<div [ngStyle]="{ 'margin-bottom': '20px' }">
+  <button [routerLink]="['/home']">Back to shopping list</button>
+</div>
+<p *ngIf="carts.length === 0; else shoppingCart">Your cart is empty!</p>
+<ng-template #shoppingCart>
+  <table>
+    <thead>
+      <th>Donut</th>
+      <th>Calories</th>
+      <th>Price</th>
+      <th>&nbsp;</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of carts">
+        <td>{{ item.name }}</td>
+        <td>{{ item.calories }}</td>
+        <td>{{ price | currency }}</td>
+        <td><button (click)="removeItem(item.id)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Total Calories: {{ getTotalCalories() }}</p>
+  <p>Total Price: {{ getTotalPrice() | currency }}</p>
+</ng-template>

@@ -1,0 +1,24 @@
+<h1>Donut</h1>
+<div [ngStyle]="{ 'margin-bottom': '20px' }">
+  <button [routerLink]="['/home']" [ngStyle]="{ 'margin-right': '20px' }">
+    Back
+  </button>
+  <button *ngIf="detail" (click)="addToCart(detail)">Add to cart</button>
+</div>
+<div>
+  <p>Name: {{ detail?.name }}</p>
+  <p>Calories: {{ detail?.calories }}</p>
+  <p>Extra:</p>
+  <ul>
+    <li *ngFor="let item of detail?.extras">{{ item }}</li>
+  </ul>
+  <img
+    [src]="detail?.photo"
+    [alt]="detail?.name"
+    [ngStyle]="{ width: '300px' }"
+  />
+  <p>Photo attribution:</p>
+  <a [href]="detail?.photo_attribution" target="_blank">{{
+    detail?.photo_attribution
+  }}</a>
+</div>

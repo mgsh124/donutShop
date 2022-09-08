@@ -1,0 +1,38 @@
+#top-menu {
+  background-color: #3178c6;
+  clear: both;
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  z-index: 101;
+}
+#top-menu > .left {
+  display: flex;
+  flex-direction: row;
+}
+#top-menu #home-page-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-top: 0.7rem;
+  width: 200px;
+  padding-left: 1rem;
+  color: white;
+}
+#top-menu ul {
+  margin: 0;
+  padding: 0;
+}
+#top-menu .nav-item {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+#top-menu > .right {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-self: flex-end;
+}
